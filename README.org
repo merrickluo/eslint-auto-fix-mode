@@ -1,0 +1,19 @@
+* eslint-auto-fix-mode
+A minor mode that automatically runs eslint --fix on buffer after saving when enabled.
+
+** Installation
+#+begin_src emacs-lisp
+(straight-use-package
+ '(eslint-auto-fix-mode :type git :host github :repo "merrickluo/eslint-auto-fix-mode"))
+#+end_src
+
+Enable it in the major modes you want eslint to run.
+#+begin_src emacs-lisp
+(add-hook 'js2-mode #'eslint-auto-fix-mode)
+(add-hook 'typescript-mode #'eslint-auto-fix-mode)
+#+end_src
+
+* Similar packages
++ https://github.com/codesuki/eslint-fix
++ https://github.com/emacs-lsp/lsp-mode
+  I'm writing this just waiting for [[https://github.com/emacs-lsp/lsp-mode/issues/2901][this issue]] to be resolved.
