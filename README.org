@@ -13,6 +13,18 @@ Enable it in the major modes you want eslint to run.
 (add-hook 'typescript-mode #'eslint-auto-fix-mode)
 #+end_src
 
+*** Doom Emacs
+=packages.el=
+#+begin_src emacs-lisp
+(package! eslint-auto-fix-mode :recipe (:host github :repo "merrickluo/eslint-auto-fix-mode"))
+#+end_src
+
+=config.el=
+#+begin_src emacs-lisp
+(use-package! eslint-auto-fix-mode
+  :hook (typescript-mode js2-mode))
+#+end_src
+
 * Similar packages
 + https://github.com/codesuki/eslint-fix
 + https://github.com/emacs-lsp/lsp-mode
